@@ -1,0 +1,8 @@
+.photo img {
+    max-width: 100%;
+    cursor: pointer;
+}
+
+.photo img:hover {
+    box-shadow: 2px 2px 8px 4px rgba(0, 0, 0, 0.3);
+}

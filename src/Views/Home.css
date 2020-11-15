@@ -1,0 +1,42 @@
+.home {
+    min-height: 100vh;
+    background-image: url("../media/images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
+    color: #fff;
+}
+
+.home__container {
+    width: 50%;
+}
+
+a {
+    color: #eee;
+}
+
+.home h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.home p {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.home__trending {
+    margin-top: 2rem;
+}
+
+@media (max-width: 800px) {
+    .home__container {
+        width: 80%;
+    }
+}

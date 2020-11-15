@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import {
+    BrowserRouter as Router,
+    Route,
+    Redirect,
+    Switch,
+} from "react-router-dom";
+
+import { SearchContext } from "./context/search-context";
+import { useSearch } from "./hooks/search-hook";
+
+import Home from "./Views/Home";
+import Result from "./Views/Result";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const {
+        searchTerm,
+        onChange,
+        onSubmit,
+        photosList,
+        collectionsList,
+        topicsList,
+        clearSearch,
+        lastSearch,
+    } = useSearch();
+
+    return (
+        <div className='App'>
+            <SearchContext.Provider
+                value={{
+                    searchTerm,
+                    onChange,
+                    onSubmit,
+                    photosList,
+                    collectionsList,
+                    topicsList,
+                    clearSearch,
+                    lastSearch,
+                }}
+            >
+                <Router>
+                    <Switch>
+                        <Route path='/' exact component={Home} />
+                        <Route path='/result' component={Result} />
+                        <Redirect to='/' />
+                    </Switch>
+                </Router>
+            </SearchContext.Provider>
+        </div>
+    );
 }
 
 export default App;

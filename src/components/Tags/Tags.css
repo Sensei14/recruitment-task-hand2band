@@ -1,0 +1,33 @@
+.tags {
+    margin-top: 1rem;
+}
+
+.tag {
+    border: 1px #aaa solid;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    margin: 0 1rem;
+    color: #777;
+    font-weight: 600;
+    width: 100%;
+    cursor: pointer;
+}
+
+.arrow-btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.arrow-btn:disabled {
+    display: none;
+}
+
+.tag:hover {
+    border-color: #444;
+    color: #444;
+}
